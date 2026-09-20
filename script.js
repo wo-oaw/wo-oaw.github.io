@@ -1,32 +1,9 @@
-const header = document.querySelector("[data-header]");
-const menuButton = document.querySelector("[data-menu-button]");
-const menu = document.querySelector("[data-menu]");
-const year = document.querySelector("[data-year]");
-
-const updateHeader = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 24);
-};
-
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
-
-menuButton?.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  menu?.classList.toggle("is-open", !isOpen);
-  menuButton.querySelector(".sr-only").textContent = isOpen ? "메뉴 열기" : "메뉴 닫기";
-});
-
-menu?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    menuButton?.setAttribute("aria-expanded", "false");
-    menu?.classList.remove("is-open");
-  });
-});
-
 const revealItems = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if ("IntersectionObserver" in window) {
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -36,14 +13,48 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.12 },
+    { threshold: 0.08, rootMargin: "0px 0px -5%" },
   );
 
   revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-if (year) {
-  year.textContent = String(new Date().getFullYear());
-}
+const year = document.querySelector("[data-year]");
+if (year) year.textContent = String(new Date().getFullYear());
+
+const sectionLinks = [...document.querySelectorAll('.hero-rail nav a[href^="#"]')]
+  .map((link) => {
+    const section = document.querySelector(link.getAttribute("href"));
+    return section ? { link, section } : null;
+  })
+  .filter(Boolean);
+
+let navTicking = false;
+
+const updateActiveSection = () => {
+  const marker = window.scrollY + window.innerHeight * 0.45;
+  let activeItem = null;
+
+  sectionLinks.forEach((item) => {
+    if (item.section.offsetTop <= marker) activeItem = item;
+  });
+
+  sectionLinks.forEach((item) => {
+    const isActive = item === activeItem;
+    item.link.classList.toggle("is-active", isActive);
+    if (isActive) item.link.setAttribute("aria-current", "location");
+    else item.link.removeAttribute("aria-current");
+  });
+
+  navTicking = false;
+};
+
+const requestNavUpdate = () => {
+  if (navTicking) return;
+  navTicking = true;
+  window.requestAnimationFrame(updateActiveSection);
+};
+
+updateActiveSection();
+window.addEventListener("scroll", requestNavUpdate, { passive: true });
+window.addEventListener("resize", requestNavUpdate);

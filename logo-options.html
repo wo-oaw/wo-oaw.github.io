@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logo wordmark candidates</title>
+  <style>
+    @font-face {
+      font-family: "Allura Local";
+      src: url("assets/fonts/allura-latin.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Gwendolyn Local";
+      src: url("assets/fonts/gwendolyn-700-latin.woff2") format("woff2");
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "MonteCarlo Local";
+      src: url("assets/fonts/montecarlo-latin.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Oooh Baby Local";
+      src: url("assets/fonts/oooh-baby-latin.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Sacramento Local";
+      src: url("assets/fonts/sacramento-latin.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #11110f;
+      --canvas: #f2f2ee;
+      --paper: #fff;
+      --sage: #aec1a4;
+      --muted: #66665f;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+    }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 54px 0 72px; }
+    header {
+      display: flex;
+      gap: 28px;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-bottom: 28px;
+      border-bottom: 2px dotted var(--ink);
+    }
+    header p, .label, .meta strong, .scale-label {
+      font-family: "Courier New", monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    header p { margin: 0; font-size: 13px; font-weight: 700; }
+    h1 { max-width: 760px; margin: 12px 0 0; font-size: clamp(36px, 5vw, 66px); font-weight: 500; line-height: 1.05; letter-spacing: -.055em; }
+    header > span { max-width: 250px; color: var(--muted); font-size: 14px; line-height: 1.65; text-align: right; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+    article { overflow: hidden; border: 1px solid #d0d0ca; border-radius: 26px; background: var(--paper); }
+    article:last-child { grid-column: 1 / -1; }
+    .logo-stage {
+      display: flex;
+      min-height: 230px;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+      background: var(--paper);
+    }
+    article:nth-child(2) .logo-stage,
+    article:nth-child(3) .logo-stage,
+    article:nth-child(5) .logo-stage { background: var(--sage); }
+    .logo-stage img { width: min(84%, 410px); height: 142px; object-fit: contain; }
+    .meta { display: grid; grid-template-columns: 115px 1fr; gap: 18px; padding: 22px 26px; border-top: 1px solid #d0d0ca; }
+    .meta strong { font-size: 12px; }
+    .meta p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .nav-scale { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 26px; border-top: 1px solid #d0d0ca; }
+    .scale-label { color: var(--muted); font-size: 10px; }
+    .nav-scale img { width: 158px; height: 48px; object-fit: contain; }
+    @media (max-width: 760px) {
+      main { width: min(100% - 20px, 620px); padding-top: 28px; }
+      header { align-items: flex-start; flex-direction: column; }
+      header > span { text-align: left; }
+      .grid { grid-template-columns: 1fr; }
+      article:last-child { grid-column: auto; }
+      .logo-stage { min-height: 190px; padding-inline: 20px; }
+      .meta { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p>Signature study · 01—05</p>
+        <h1>Geonae wordmark candidates</h1>
+      </div>
+      <span>큰 로고와 실제 왼쪽 레일 크기를 함께 비교할 수 있는 후보판</span>
+    </header>
+
+    <section class="grid" aria-label="로고 후보 다섯 가지">
+      <article>
+        <div class="logo-stage"><img src="assets/logo-candidates/01-gwendolyn-geonae.svg" alt="geonae"></div>
+        <div class="meta"><strong>01 · Gwendolyn</strong><p>굵은 획과 유연한 곡선이 있어 작은 크기에서도 가장 또렷한 서명형</p></div>
+        <div class="nav-scale"><span class="scale-label">Navigation scale</span><img src="assets/logo-candidates/01-gwendolyn-geonae.svg" alt=""></div>
+      </article>
+
+      <article>
+        <div class="logo-stage"><img src="assets/logo-candidates/02-montecarlo-imgeonae.svg" alt="Imgeonae"></div>
+        <div class="meta"><strong>02 · MonteCarlo</strong><p>가늘고 긴 획이 특징인 정제된 캘리그래피형으로 가장 우아한 인상</p></div>
+        <div class="nav-scale"><span class="scale-label">Navigation scale</span><img src="assets/logo-candidates/02-montecarlo-imgeonae.svg" alt=""></div>
+      </article>
+
+      <article>
+        <div class="logo-stage"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="geonae"></div>
+        <div class="meta"><strong>03 · Sacramento</strong><p>한 줄로 자연스럽게 이어지는 모노라인 서체로 현재 미니멀 레이아웃과 가장 안정적인 조합</p></div>
+        <div class="nav-scale"><span class="scale-label">Navigation scale</span><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt=""></div>
+      </article>
+
+      <article>
+        <div class="logo-stage"><img src="assets/logo-candidates/04-oooh-baby-imgeonae.svg" alt="Imgeonae"></div>
+        <div class="meta"><strong>04 · Oooh Baby</strong><p>실제로 펜으로 빠르게 적은 듯한 리듬이 있어 가장 개인적이고 자연스러운 서명형</p></div>
+        <div class="nav-scale"><span class="scale-label">Navigation scale</span><img src="assets/logo-candidates/04-oooh-baby-imgeonae.svg" alt=""></div>
+      </article>
+
+      <article>
+        <div class="logo-stage"><img src="assets/logo-candidates/05-allura-geonae.svg" alt="geonae"></div>
+        <div class="meta"><strong>05 · Allura</strong><p>획의 대비가 부드럽고 읽기 쉬워 우아함과 친근함의 균형이 좋은 클래식형</p></div>
+        <div class="nav-scale"><span class="scale-label">Navigation scale</span><img src="assets/logo-candidates/05-allura-geonae.svg" alt=""></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
