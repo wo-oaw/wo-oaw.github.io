@@ -75,6 +75,13 @@ button { color: inherit; font: inherit; }
   backdrop-filter: blur(14px);
 }
 
+.site-header[data-current-theme="dark"] {
+  color: var(--paper);
+  background: rgb(17 17 17 / 94%);
+  border-color: rgb(244 244 240 / 22%);
+  backdrop-filter: blur(14px);
+}
+
 .site-header[data-current-theme="sage"] { background: rgb(183 196 172 / 90%); }
 
 .brand,
@@ -126,8 +133,8 @@ button { color: inherit; font: inherit; }
 
 .section-shell {
   position: relative;
-  min-height: 80svh;
-  padding: clamp(108px, 11vw, 164px) var(--gutter) clamp(90px, 10vw, 150px);
+  min-height: 68svh;
+  padding: clamp(76px, 6vw, 92px) var(--gutter) clamp(72px, 7vw, 108px);
 }
 
 .section-shell > * {
@@ -147,7 +154,7 @@ button { color: inherit; font: inherit; }
 }
 
 .section-index {
-  margin-bottom: clamp(54px, 7vw, 100px);
+  margin-bottom: clamp(34px, 4vw, 56px);
   font-size: 12px;
   font-weight: 600;
 }
@@ -264,7 +271,7 @@ button { color: inherit; font: inherit; }
 
 .portrait {
   position: relative;
-  width: min(100%, 650px);
+  width: min(100%, 470px);
   justify-self: end;
   padding: 0 0 7% 7%;
 }
@@ -289,6 +296,9 @@ button { color: inherit; font: inherit; }
 }
 
 .projects {
+  min-height: auto;
+  padding-top: clamp(68px, 5vw, 82px);
+  padding-bottom: clamp(64px, 5vw, 82px);
   padding-right: var(--gutter);
   padding-left: var(--gutter);
   background: var(--paper);
@@ -299,7 +309,7 @@ button { color: inherit; font: inherit; }
   align-items: end;
   justify-content: space-between;
   gap: 30px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .projects-heading .section-index { margin: 0; }
@@ -315,9 +325,9 @@ button { color: inherit; font: inherit; }
   display: grid;
   grid-template-columns: 46px minmax(300px, .88fr) minmax(360px, 1.12fr) 34px;
   gap: clamp(26px, 4vw, 68px);
-  min-height: clamp(430px, 43vw, 620px);
+  min-height: clamp(360px, 58svh, 520px);
   align-items: center;
-  padding: clamp(58px, 7vw, 102px) 0;
+  padding: clamp(36px, 4vw, 56px) 0;
   border-top: 1px solid var(--ink);
 }
 
@@ -375,7 +385,7 @@ button { color: inherit; font: inherit; }
 .project-media img {
   width: 100%;
   height: auto;
-  max-height: 430px;
+  max-height: 340px;
   object-fit: contain;
   transition: transform 300ms ease;
 }
@@ -571,8 +581,8 @@ button { color: inherit; font: inherit; }
   .site-nav.is-open { transform: none; }
   .site-nav a { padding: 15px 0; border-bottom: 1px solid rgb(17 17 17 / 20%); }
   .site-nav a::after { display: none; }
-  .section-shell { min-height: auto; padding-top: 92px; padding-bottom: 92px; }
-  .section-index { margin-bottom: 44px; }
+  .section-shell { min-height: auto; padding-top: 76px; padding-bottom: 76px; }
+  .section-index { margin-bottom: 36px; }
   .intro { padding-bottom: 54px; }
   .intro h1 { font-size: clamp(40px, 10vw, 62px); line-height: 1.17; }
   .mobile-line { display: block; }
@@ -590,7 +600,7 @@ button { color: inherit; font: inherit; }
   .standard-list { margin-top: 58px; }
   .about-copy { margin-bottom: 58px; }
   .about-description { margin-top: 36px; }
-  .portrait { justify-self: start; width: min(100%, 560px); }
+  .portrait { justify-self: start; width: min(100%, 440px); }
   .projects-heading { display: block; }
   .projects-heading h2 { margin-top: 14px; }
 
@@ -598,7 +608,7 @@ button { color: inherit; font: inherit; }
     grid-template-columns: 34px 1fr 28px;
     gap: 18px;
     min-height: auto;
-    padding: 62px 0;
+    padding: 44px 0;
   }
 
   .project-copy { grid-column: 2; }
