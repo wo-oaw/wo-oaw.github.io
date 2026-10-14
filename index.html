@@ -4,233 +4,185 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="기본과 안정성을 중시하는 백엔드 개발자 임건애의 포트폴리오" />
-    <meta name="theme-color" content="#f2f2ee" />
+    <meta name="theme-color" content="#111111" />
     <meta property="og:title" content="임건애 | Backend Developer" />
     <meta property="og:description" content="정확한 기반으로 오래가는 시스템을 만듭니다" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wo-oaw.github.io" />
     <link rel="canonical" href="https://wo-oaw.github.io" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23AEC1A4'/%3E%3Cpath d='M17 34l10 10 20-24' fill='none' stroke='%23000' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>임건애 | Backend Developer</title>
   </head>
   <body>
-    <a class="skip-link" href="#projects">프로젝트로 바로가기</a>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
 
-    <main class="page" id="top">
-      <section class="frame hero-frame" aria-labelledby="hero-title">
-        <aside class="rail hero-rail">
-          <a class="wordmark" href="#top" aria-label="처음으로"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="" /></a>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="처음으로">IM GEONAE</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span>MENU</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#principles">PRINCIPLES</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
 
-          <div class="hero-profile">
-            <figure class="hero-profile-photo">
-              <img src="assets/profile-geonae.jpeg" alt="백엔드 개발자 임건애" />
-            </figure>
+    <main id="main">
+      <section class="intro dark-section" id="top" data-theme="dark" aria-labelledby="intro-title">
+        <div class="intro-inner reveal">
+          <p class="eyebrow">BACKEND DEVELOPER · IM GEONAE</p>
+          <h1 id="intro-title">기본을 지키고<br />안정적인 기반을 <span class="mobile-line">만드는</span><br />개발자입니다</h1>
+          <a class="text-link" href="#about">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
 
-            <div class="hero-profile-identity">
-              <strong>임건애</strong>
-              <span>Backend Developer</span>
+      <section class="statement section-shell" data-theme="light" aria-labelledby="statement-title">
+        <div class="section-index">01 / STANDARD</div>
+        <div class="statement-copy reveal">
+          <h2 id="statement-title">정확하게 쌓은 기반은<br />다음 변화의 속도가 됩니다</h2>
+          <p>빠르게 끝내는 것보다 다시 고치지 않을 기준을 먼저 세웁니다<br />실패 상황까지 설계하고 판단의 근거를 코드와 기록으로 남깁니다</p>
+        </div>
+        <dl class="standard-list reveal">
+          <div><dt>01</dt><dd>정합성을 먼저 확인합니다</dd></div>
+          <div><dt>02</dt><dd>반복되는 판단을 구조로 남깁니다</dd></div>
+          <div><dt>03</dt><dd>원인을 재현하고 끝까지 확인합니다</dd></div>
+        </dl>
+      </section>
+
+      <section class="about section-shell" id="about" data-theme="light" aria-labelledby="about-title">
+        <div class="section-index">02 / ABOUT</div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">HELLO, I AM</p>
+          <h2 id="about-title">임건애</h2>
+          <p class="about-role">Backend Developer</p>
+          <p class="about-description">낯선 시스템의 흐름을 차분히 읽고<br />안정적으로 개선하는 과정을 좋아합니다</p>
+          <a class="inline-link" href="https://github.com/wo-oaw" target="_blank" rel="noreferrer">GITHUB <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="portrait reveal">
+          <span aria-hidden="true"></span>
+          <img src="assets/profile-geonae.jpeg" alt="백엔드 개발자 임건애" />
+        </figure>
+      </section>
+
+      <section class="projects section-shell" id="projects" data-theme="light" aria-labelledby="projects-title">
+        <div class="projects-heading reveal">
+          <div class="section-index">03 / PROJECTS</div>
+          <h2 id="projects-title">Selected work</h2>
+        </div>
+
+        <article class="project-row reveal">
+          <div class="project-number">01</div>
+          <div class="project-copy">
+            <p class="project-type">PRODUCT · 2026</p>
+            <h3>PACEON</h3>
+            <p class="project-summary">나의 페이스를 찾아가는 러닝 서비스</p>
+            <ul class="tag-list" aria-label="PaceOn 기술 영역">
+              <li>BACKEND</li><li>INFRA</li><li>CICD</li>
+            </ul>
+          </div>
+          <figure class="project-media paceon-media">
+            <img src="assets/paceon-cover.png" alt="PaceOn 러닝 서비스 대표 이미지" />
+          </figure>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </article>
+
+        <article class="project-row reveal">
+          <div class="project-number">02</div>
+          <div class="project-copy">
+            <p class="project-type">FINTECH · TEAM LEAD · 2025</p>
+            <h3>CREDITTO</h3>
+            <p class="project-summary">외국인의 기존 신용 정보를 연계하는 신용 동기화 서비스</p>
+            <ul class="tag-list" aria-label="Creditto 기술 영역">
+              <li>SPRING BOOT</li><li>REDIS</li><li>MYSQL</li>
+            </ul>
+            <div class="project-links" aria-label="Creditto 저장소">
+              <a href="https://github.com/Creditto-FISA/Core-BE" target="_blank" rel="noreferrer">CORE ↗</a>
+              <a href="https://github.com/Creditto-FISA/Creditto-BE" target="_blank" rel="noreferrer">SERVICE ↗</a>
+              <a href="https://github.com/Creditto-FISA/Auth-BE" target="_blank" rel="noreferrer">AUTH ↗</a>
             </div>
-
-            <div class="hero-profile-intro">
-              <span>ABOUT</span>
-              <p>기본과 안정성을<br />중시하는 백엔드 개발자</p>
-            </div>
           </div>
+          <a class="project-media" href="https://github.com/Creditto-FISA/Core-BE" target="_blank" rel="noreferrer" aria-label="Creditto Core 저장소 열기">
+            <img src="assets/creditto-cover.png" alt="Creditto 신용 동기화 서비스 발표 표지" />
+          </a>
+          <a class="project-arrow" href="https://github.com/Creditto-FISA/Core-BE" target="_blank" rel="noreferrer" aria-label="Creditto 저장소 열기">↗</a>
+        </article>
 
-          <nav aria-label="주요 메뉴">
-            <a href="#projects"><i aria-hidden="true"></i>Projects</a>
-            <a href="#principles"><i aria-hidden="true"></i>Principles</a>
-            <a href="#experience"><i aria-hidden="true"></i>Experience</a>
-            <a href="https://github.com/wo-oaw" target="_blank" rel="noreferrer"><i aria-hidden="true"></i>GitHub ↗</a>
-          </nav>
-        </aside>
-
-        <div class="hero-canvas">
-          <p class="kicker">BACKEND DEVELOPER</p>
-          <h1 id="hero-title">
-            기본을 지키고<br />
-            안정적인 기반을 <span class="mobile-break">만드는</span><br />
-            개발자입니다
-          </h1>
-
-          <div class="hero-note">
-            <span>MY STANDARD</span>
-            <p>정확하게 쌓은 기반은<br />다음 변화의 속도가 됩니다</p>
+        <article class="project-row reveal">
+          <div class="project-number">03</div>
+          <div class="project-copy">
+            <p class="project-type">AI REALTIME COMMUNICATION · 2026</p>
+            <h3>CALL ME BABY</h3>
+            <p class="project-summary">영상통화와 AI 대화 주제, 공동 그림판, 그림일기를 연결한 가족 서비스</p>
+            <ul class="tag-list" aria-label="Call Me Baby 기술 영역">
+              <li>BACKEND</li><li>REDIS</li><li>AWS</li>
+            </ul>
           </div>
-
-          <!-- <a class="tilted-link" href="#projects">
-            <span>프로젝트 보기</span>
-            <b aria-hidden="true">↘</b>
-          </a> -->
-        </div>
+          <a class="project-media" href="https://github.com/ssafy-call-me-baby" target="_blank" rel="noreferrer" aria-label="Call Me Baby 프로젝트 소개 열기">
+            <img src="assets/call-me-baby-main.png" alt="Call Me Baby 서비스 메인 화면" />
+          </a>
+          <a class="project-arrow" href="https://github.com/ssafy-call-me-baby" target="_blank" rel="noreferrer" aria-label="Call Me Baby 프로젝트 소개 열기">↗</a>
+        </article>
       </section>
 
-      <section class="frame work-frame" id="projects" aria-labelledby="projects-title">
-        <aside class="rail section-rail">
-          <a class="wordmark" href="#top" aria-label="처음으로"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="" /></a>
-          <div>
-            <span>01</span>
-            <p>Selected work</p>
-          </div>
-        </aside>
-
-        <div class="work-content">
-          <header class="editorial-heading reveal">
-            <p class="kicker">PROJECTS · 2026</p>
-            <h2 id="projects-title">기능보다 먼저<br />흔들리지 않을 구조를 고민했습니다</h2>
-          </header>
-
-          <div class="project-grid">
-            <article class="project-card project-copy reveal">
-              <div class="card-topline"><span>01</span><span>BACKEND · INFRA</span></div>
-              <div>
-                <p class="card-eyebrow">AI REALTIME COMMUNICATION</p>
-                <h3>Call Me Baby</h3>
-                <p class="card-summary">부모와 아이의 영상통화에 AI 대화 주제, 공동 그림판, 그림일기를 연결한 서비스입니다</p>
-              </div>
-              <dl>
-                <div><dt>맡은 일</dt><dd>통화방·Redis 상태관리·그림일기 API, CI/CD와 배포 인프라</dd></div>
-                <div><dt>기준</dt><dd>dev/prod 분리, 변경 감지 배포, 헬스체크와 계층별 로그 추적</dd></div>
-              </dl>
-              <a class="card-link" href="https://github.com/ssafy-call-me-baby" target="_blank" rel="noreferrer">프로젝트 소개 <span aria-hidden="true">↗</span></a>
-            </article>
-
-            <a class="project-card project-visual call-visual reveal" href="https://github.com/ssafy-call-me-baby" target="_blank" rel="noreferrer" aria-label="Call Me Baby 프로젝트 소개 열기">
-              <span class="visual-label">REALTIME · FAMILY · AI</span>
-              <span class="project-image-frame"><img src="assets/call-me-baby-main.png" alt="Call Me Baby 서비스 메인 화면" /></span>
-            </a>
-
-            <a class="project-card project-visual credit-visual reveal" href="https://github.com/Creditto-FISA/Core-BE" target="_blank" rel="noreferrer" aria-label="Creditto Core Banking 저장소 열기">
-              <span class="visual-label">FINANCE · DATA INTEGRITY</span>
-              <span class="project-image-frame"><img src="assets/creditto-cover.png" alt="Creditto 신용 동기화 서비스 발표 표지" /></span>
-            </a>
-
-            <article class="project-card project-copy project-copy-yellow reveal">
-              <div class="card-topline"><span>02</span><span>FINANCIAL BACKEND · TEAM LEAD</span></div>
-              <div>
-                <p class="card-eyebrow">CROSS-BORDER CREDIT SERVICE</p>
-                <h3>Creditto</h3>
-                <p class="card-summary">외국인의 기존 신용 정보를 연계해 국내 금융 서비스 이용을 돕는 신용 동기화 서비스입니다</p>
-              </div>
-              <dl>
-                <div><dt>맡은 일</dt><dd>ERD·범위 정리, 계좌·원장·이체의 동시성 제어 설계</dd></div>
-                <div><dt>기준</dt><dd>분산 락과 DB 락의 이중 방어, 장애 시 폴백, 2인 승인 PR</dd></div>
-              </dl>
-              <div class="repo-row" aria-label="Creditto 저장소">
-                <a href="https://github.com/Creditto-FISA/Core-BE" target="_blank" rel="noreferrer">Core ↗</a>
-                <a href="https://github.com/Creditto-FISA/Creditto-BE" target="_blank" rel="noreferrer">Service ↗</a>
-                <a href="https://github.com/Creditto-FISA/Auth-BE" target="_blank" rel="noreferrer">Auth ↗</a>
-              </div>
-            </article>
-          </div>
+      <section class="principles dark-section section-shell" id="principles" data-theme="dark" aria-labelledby="principles-title">
+        <div class="section-index">04 / PRINCIPLES</div>
+        <div class="principles-heading reveal">
+          <p class="eyebrow">FOUNDATION BEFORE SPEED</p>
+          <h2 id="principles-title">속도와 정확성은<br />반대말이 아닙니다</h2>
         </div>
+        <ol class="principle-list">
+          <li class="reveal"><span>01</span><h3>정합성을 먼저 봅니다</h3><p>정상 흐름뿐 아니라 경계 조건과 실패 상황을 함께 정의합니다</p></li>
+          <li class="reveal"><span>02</span><h3>판단 기준을 구조로 남깁니다</h3><p>환경 분리와 리뷰 규칙처럼 반복되는 결정을 코드와 프로세스로 만듭니다</p></li>
+          <li class="reveal"><span>03</span><h3>원인을 끝까지 확인합니다</h3><p>증상을 덮지 않고 로그와 실행 흐름을 따라 재현 가능한 해결책을 찾습니다</p></li>
+        </ol>
       </section>
 
-      <section class="frame principle-frame" id="principles" aria-labelledby="principles-title">
-        <aside class="rail section-rail">
-          <a class="wordmark" href="#top" aria-label="처음으로"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="" /></a>
-          <div>
-            <span>02</span>
-            <p>How I work</p>
-          </div>
-        </aside>
-
-        <div class="principle-content">
-          <header class="editorial-heading reveal">
-            <p class="kicker">PRINCIPLES</p>
-            <h2 id="principles-title">속도와 정확성은<br />반대말이 아닙니다</h2>
-          </header>
-
-          <div class="belief reveal">
-            <p>
-              처음부터 정확한 기준을 세우면 재작업은 줄고<br />
-              코드는 더 오래 재사용할 수 있습니다
-            </p>
-            <span>FOUNDATION BEFORE SPEED</span>
-          </div>
-
-          <ol class="principle-list">
-            <li class="reveal">
-              <span>01</span>
-              <h3>정합성을 먼저 봅니다</h3>
-              <p>정상 흐름뿐 아니라 경계 조건과 실패 상황을 함께 정의합니다</p>
-            </li>
-            <li class="reveal">
-              <span>02</span>
-              <h3>판단 기준을 구조로 남깁니다</h3>
-              <p>환경 분리와 리뷰 규칙처럼 반복되는 결정을 코드와 프로세스로 만듭니다</p>
-            </li>
-            <li class="reveal">
-              <span>03</span>
-              <h3>원인을 끝까지 확인합니다</h3>
-              <p>증상을 덮지 않고 로그와 실행 흐름을 따라 재현 가능한 해결책을 찾습니다</p>
-            </li>
-          </ol>
+      <section class="experience section-shell" id="experience" data-theme="sage" aria-labelledby="experience-title">
+        <div class="section-index">05 / EXPERIENCE</div>
+        <div class="experience-heading reveal">
+          <p class="eyebrow">LEARN · BUILD · IMPROVE</p>
+          <h2 id="experience-title">낯선 시스템을 읽고<br />안정적으로 개선해 왔습니다</h2>
         </div>
+        <ol class="timeline">
+          <li class="reveal"><time>2018.03 — 2025.02</time><div><h3>동덕여자대학교 컴퓨터학과</h3><p>소프트웨어 개발에 필요한 전공 기반을 쌓고 프로젝트와 실무 경험으로 확장했습니다</p></div></li>
+          <li class="reveal"><time>2023.12 — 2024.12</time><div><h3>건설사 연구팀 · 1인 개발자</h3><p>C++ MFC ERP/CAD와 C#/.NET, MSSQL 환경을 분석하고 장애를 재현해 로그인 실패 문제를 복구했습니다</p></div></li>
+          <li class="reveal"><time>2025.07 — 2025.12</time><div><h3>우리FIS 아카데미 · 클라우드 서비스 5기</h3><p>금융 도메인 기반 백엔드와 인프라를 학습하고 팀장으로 서비스 구조와 협업 기준을 정리했습니다</p></div></li>
+          <li class="reveal"><time>2026.01 —</time><div><h3>삼성 청년 SW·AI 아카데미 · 15기</h3><p>알고리즘과 CS 기본기를 다지고 백엔드·인프라 프로젝트로 구현의 근거를 넓히고 있습니다</p></div></li>
+        </ol>
       </section>
 
-      <section class="frame experience-frame" id="experience" aria-labelledby="experience-title">
-        <aside class="rail section-rail">
-          <a class="wordmark" href="#top" aria-label="처음으로"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="" /></a>
-          <div>
-            <span>03</span>
-            <p>Experience</p>
-          </div>
-        </aside>
-
-        <div class="experience-content">
-          <header class="editorial-heading reveal">
-            <p class="kicker">EXPERIENCE · CAPABILITY</p>
-            <h2 id="experience-title">낯선 시스템을 읽고<br />안정적으로 개선해 왔습니다</h2>
-          </header>
-
-          <ol class="timeline">
-            <li class="reveal">
-              <span class="timeline-index">01</span>
-              <div class="timeline-title"><small>2018.03 — 2025.02</small><strong>동덕여자대학교<br />컴퓨터학과</strong></div>
-              <div><h3>컴퓨터학 전공 과정 이수</h3><p>소프트웨어 개발에 필요한 전공 기반을 쌓고 프로젝트와 실무 경험으로 확장했습니다</p></div>
-            </li>
-            <li class="reveal">
-              <span class="timeline-index">02</span>
-              <div class="timeline-title"><small>2023.12 - 2024.12</small><strong>건설사 연구팀<br />1인 개발자</strong></div>
-              <div><h3>레거시 업무 시스템 유지보수</h3><p>C++ MFC ERP/CAD와 C#/.NET, MSSQL 환경을 분석하고 장애를 재현해 로그인 실패 문제를 복구했습니다</p></div>
-            </li>
-            <li class="reveal">
-              <span class="timeline-index">03</span>
-              <div class="timeline-title"><small>2025.07 - 2025.12 | 수료</small><strong>우리FIS 아카데미<br />클라우드 서비스 5기</strong></div>
-              <div><h3>금융 백엔드와 클라우드 실무</h3><p>금융 도메인 기반 백엔드·인프라를 학습하고 6인 프로젝트에서 팀장으로 서비스 구조와 협업 기준을 정리했습니다</p></div>
-            </li>
-            <li class="reveal">
-              <span class="timeline-index">04</span>
-              <div class="timeline-title"><small>2026.01 - | 진행 중</small><strong>삼성 청년 SW·AI 아카데미<br />15기</strong></div>
-              <div><h3>문제 해결의 기본기 확장</h3><p>알고리즘과 CS 기본기를 다지고 백엔드·인프라 프로젝트를 통해 구현의 근거를 넓히고 있습니다</p></div>
-            </li>
-          </ol>
-
-          <div class="skill-grid reveal" aria-label="기술과 자격">
-            <div><span>BACKEND</span><p>Java · Spring Boot · JPA · Redis · MySQL · MSSQL</p></div>
-            <div><span>DELIVERY &amp; INFRA</span><p>Docker · Jenkins · AWS EC2 · GitHub Actions</p></div>
-            <div><span>LEGACY &amp; DESKTOP</span><p>C++ · MFC · C# · .NET</p></div>
-            <div><span>CERTIFICATES</span><p>정보처리기사 · SQLD · ADsP</p></div>
-          </div>
+      <section class="skills section-shell" id="skills" data-theme="light" aria-labelledby="skills-title">
+        <div class="section-index">06 / SKILLS</div>
+        <div class="skills-heading reveal">
+          <p class="eyebrow">TECHNICAL TOOLKIT</p>
+          <h2 id="skills-title">기술은 문제를 정확히<br />해결하기 위해 선택합니다</h2>
         </div>
+        <dl class="skill-list reveal">
+          <div><dt>BACKEND</dt><dd>Java · Spring Boot · JPA · Redis · MySQL · MSSQL</dd></div>
+          <div><dt>DELIVERY &amp; INFRA</dt><dd>Docker · Jenkins · AWS EC2 · GitHub Actions</dd></div>
+          <div><dt>LEGACY &amp; DESKTOP</dt><dd>C++ · MFC · C# · .NET</dd></div>
+          <div><dt>CERTIFICATES</dt><dd>정보처리기사 · SQLD · ADsP</dd></div>
+        </dl>
       </section>
 
-      <section class="frame closing-frame" aria-labelledby="closing-title">
-        <aside class="rail section-rail closing-rail">
-          <a class="wordmark" href="#top" aria-label="처음으로"><img src="assets/logo-candidates/03-sacramento-geonae.svg" alt="" /></a>
-          <div><span>04</span><p>Contact</p></div>
-        </aside>
-        <div class="closing-content reveal">
-          <p class="kicker">LET'S BUILD IT RIGHT</p>
-          <h2 id="closing-title">견고한 기반 위에서<br />오래가는 서비스를 만들고 싶습니다</h2>
-          <a href="https://github.com/wo-oaw" target="_blank" rel="noreferrer">GitHub에서 더 보기 <span aria-hidden="true">↗</span></a>
-          <footer><span>IM GEONAE · BACKEND DEVELOPER</span><span>© <b data-year>2026</b></span></footer>
+      <section class="contact dark-section section-shell" id="contact" data-theme="dark" aria-labelledby="contact-title">
+        <div class="section-index">07 / CONTACT</div>
+        <div class="contact-copy reveal">
+          <p class="eyebrow">LET'S BUILD IT RIGHT</p>
+          <h2 id="contact-title">견고한 기반 위에서<br />오래가는 서비스를 만들고 싶습니다</h2>
         </div>
+        <div class="contact-links reveal">
+          <a href="https://github.com/wo-oaw" target="_blank" rel="noreferrer"><span>GITHUB</span><b>↗</b></a>
+          <div><span>EMAIL</span><b>AVAILABLE ON REQUEST</b></div>
+        </div>
+        <footer><span>IM GEONAE · BACKEND DEVELOPER</span><span>© <b data-year>2026</b></span></footer>
       </section>
     </main>
 
