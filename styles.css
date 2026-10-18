@@ -266,24 +266,39 @@ button { color: inherit; font: inherit; }
   line-height: 1.65;
 }
 
-.about-focus {
-  display: grid;
-  max-width: 390px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+.about-stack {
   margin-top: 28px;
 }
 
-.about-focus li {
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
+.about-stack h3 {
+  margin-bottom: 14px;
   font: 600 11px/1.4 var(--mono);
   letter-spacing: .08em;
 }
 
+.tech-badges {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 10px;
+}
+
+.tech-badges li {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font: 500 12px/1.2 var(--mono);
+  white-space: nowrap;
+}
+
+.tech-badges img { width: 18px; height: 18px; object-fit: contain; }
+
 .inline-link {
   display: inline-block;
-  margin-top: 32px;
+  margin-top: 26px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--ink);
   font: 600 12px/1 var(--mono);
@@ -622,7 +637,7 @@ button { color: inherit; font: inherit; }
   .standard-list { margin-top: 58px; }
   .about .section-index { margin-bottom: 24px; }
   .about-copy { margin-bottom: 40px; }
-  .about-focus { margin-top: 28px; }
+  .about-stack { margin-top: 28px; }
   .portrait { justify-self: start; width: min(100%, 440px); }
   .projects-heading { display: block; }
   .projects-heading h2 { margin-top: 14px; }
@@ -650,6 +665,7 @@ button { color: inherit; font: inherit; }
 }
 
 @media (max-width: 480px) {
+  .tech-badges { grid-template-columns: repeat(2, max-content); }
   .brand, .menu-button { font-size: 11px; }
   .intro h1 { font-size: clamp(36px, 10.6vw, 48px); }
   .statement-copy h2,
