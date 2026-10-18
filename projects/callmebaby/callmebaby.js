@@ -169,19 +169,25 @@
 (() => {
   const header = document.querySelector("[data-header]");
   const themeSections = Array.from(document.querySelectorAll("[data-theme]"));
+  const navSections = Array.from(document.querySelectorAll("[data-nav]"));
   const navLinks = Array.from(document.querySelectorAll('.project-nav a[href^="#"]'));
   if (!header || themeSections.length === 0) return;
   let ticking = false;
 
   const updateHeader = () => {
-    const marker = window.scrollY + 90;
+    const themeMarker = header.getBoundingClientRect().height + 18;
+    const navMarker = Math.max(themeMarker, Math.min(window.innerHeight * 0.35, 320));
     let activeSection = themeSections[0];
+    let activeNav = "";
     themeSections.forEach((section) => {
-      if (section.offsetTop <= marker) activeSection = section;
+      if (section.getBoundingClientRect().top <= themeMarker) activeSection = section;
+    });
+    navSections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= navMarker) activeNav = section.dataset.nav;
     });
     header.dataset.currentTheme = activeSection.dataset.theme || "light";
     navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${activeSection.dataset.nav || ""}`;
+      const isActive = link.getAttribute("href") === `#${activeNav}`;
       link.classList.toggle("is-active", isActive);
       if (isActive) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
@@ -198,4 +204,5 @@
   updateHeader();
   window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
   window.addEventListener("resize", requestHeaderUpdate);
+  window.addEventListener("pageshow", requestHeaderUpdate);
 })();

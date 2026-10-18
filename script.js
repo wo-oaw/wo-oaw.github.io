@@ -20,22 +20,30 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
 
 const header = document.querySelector("[data-header]");
 const themeSections = [...document.querySelectorAll("[data-theme]")];
+const navSections = [...document.querySelectorAll("[data-nav]")];
 const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+const currentMenuLabel = document.querySelector(".menu-current");
 let ticking = false;
 
 const updateHeader = () => {
-  const marker = window.scrollY + 90;
+  const themeMarker = header.getBoundingClientRect().height + 18;
+  const navMarker = Math.max(themeMarker, Math.min(window.innerHeight * 0.35, 320));
   let activeSection = themeSections[0];
+  let activeNav = "";
 
   themeSections.forEach((section) => {
-    if (section.offsetTop <= marker) activeSection = section;
+    if (section.getBoundingClientRect().top <= themeMarker) activeSection = section;
+  });
+
+  navSections.forEach((section) => {
+    if (section.getBoundingClientRect().top <= navMarker) activeNav = section.dataset.nav;
   });
 
   header.dataset.currentTheme = activeSection?.dataset.theme || "dark";
+  currentMenuLabel.textContent = activeNav.toUpperCase();
 
   navLinks.forEach((link) => {
-    const target = document.querySelector(link.getAttribute("href"));
-    const isActive = target === activeSection;
+    const isActive = link.getAttribute("href") === `#${activeNav}`;
     link.classList.toggle("is-active", isActive);
     if (isActive) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
@@ -53,6 +61,7 @@ const requestHeaderUpdate = () => {
 updateHeader();
 window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
 window.addEventListener("resize", requestHeaderUpdate);
+window.addEventListener("pageshow", requestHeaderUpdate);
 
 const menuButton = document.querySelector(".menu-button");
 const siteNav = document.querySelector(".site-nav");

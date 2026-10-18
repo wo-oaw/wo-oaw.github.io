@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../project-detail.css?v=20261018-25" />
+    <link rel="stylesheet" href="../project-detail.css?v=20261018-scroll-nav-1" />
     <title>PaceOn | 임건애 포트폴리오</title>
   </head>
   <body class="paceon-project">
@@ -26,7 +26,7 @@
     </header>
 
     <main id="project-main">
-      <section class="project-hero" data-theme="light">
+      <section class="project-hero" data-theme="light" data-nav="overview">
         <div class="hero-topline">
           <p>CASE STUDY · 2026</p>
           <p class="preview-label">BACKEND · INFRASTRUCTURE</p>
@@ -574,19 +574,25 @@
       (() => {
         const header = document.querySelector("[data-header]");
         const themeSections = Array.from(document.querySelectorAll("[data-theme]"));
+        const navSections = Array.from(document.querySelectorAll("[data-nav]"));
         const navLinks = Array.from(document.querySelectorAll('.project-nav a[href^="#"]'));
         let ticking = false;
 
         const updateHeader = () => {
-          const marker = window.scrollY + 90;
+          const themeMarker = header.getBoundingClientRect().height + 18;
+          const navMarker = Math.max(themeMarker, Math.min(window.innerHeight * 0.35, 320));
           let activeSection = themeSections[0];
+          let activeNav = "";
 
           themeSections.forEach((section) => {
-            if (section.offsetTop <= marker) activeSection = section;
+            if (section.getBoundingClientRect().top <= themeMarker) activeSection = section;
+          });
+
+          navSections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= navMarker) activeNav = section.dataset.nav;
           });
 
           header.dataset.currentTheme = activeSection?.dataset.theme || "light";
-          const activeNav = activeSection?.dataset.nav || "";
 
           navLinks.forEach((link) => {
             const isActive = link.getAttribute("href") === `#${activeNav}`;
@@ -607,6 +613,7 @@
         updateHeader();
         window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
         window.addEventListener("resize", requestHeaderUpdate);
+        window.addEventListener("pageshow", requestHeaderUpdate);
       })();
 
       (() => {

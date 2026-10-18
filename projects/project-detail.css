@@ -885,7 +885,8 @@ ul { padding: 0; list-style: none; }
 @media (max-width: 820px) {
   :root { --header-height: 62px; --gutter: 22px; }
   body { word-break: normal; overflow-wrap: break-word; }
-  .project-nav a:not(:first-child) { display: none; }
+  .project-nav a[href^="#"] { display: none; }
+  .project-nav a[href^="#"].is-active { display: block; }
   .project-meta { grid-template-columns: 1fr 1fr; }
   .presentation-caption { align-items: flex-start; flex-direction: column; gap: 14px; }
   .presentation-caption-copy { width: 100%; justify-content: space-between; }
@@ -920,6 +921,7 @@ ul { padding: 0; list-style: none; }
 }
 
 @media (max-width: 480px) {
+  .project-nav a:first-child { display: none; }
   .hero-topline { align-items: flex-start; flex-direction: column; gap: 8px; }
   .project-hero h1 { font-size: clamp(62px, 22vw, 92px); }
   .project-meta { grid-template-columns: 1fr; }
