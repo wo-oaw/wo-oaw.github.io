@@ -244,15 +244,22 @@ button { color: inherit; font: inherit; }
 .about {
   display: grid;
   min-height: 0;
-  grid-template-columns: minmax(300px, .8fr) minmax(360px, 1.2fr);
-  column-gap: clamp(64px, 10vw, 160px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .95fr);
+  column-gap: clamp(56px, 8vw, 128px);
   align-items: center;
   padding-top: 0;
   padding-bottom: 0;
   background: var(--paper);
 }
 
-.about .section-index { grid-column: 1 / -1; align-self: start; }
+.about .section-index {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  margin-bottom: clamp(38px, 4vw, 60px);
+}
+
+.about-copy { grid-column: 1; grid-row: 2; }
 .about-copy h2 { margin-top: 18px; }
 .about-role { margin-top: 8px; font: 500 16px/1.4 var(--mono); }
 
@@ -263,9 +270,24 @@ button { color: inherit; font: inherit; }
   line-height: 1.65;
 }
 
+.about-focus {
+  display: grid;
+  max-width: 480px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.about-focus li {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font: 600 11px/1.4 var(--mono);
+  letter-spacing: .08em;
+}
+
 .inline-link {
   display: inline-block;
-  margin-top: 48px;
+  margin-top: 42px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--ink);
   font: 600 12px/1 var(--mono);
@@ -274,7 +296,9 @@ button { color: inherit; font: inherit; }
 
 .portrait {
   position: relative;
-  width: min(100%, 470px);
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: min(100%, 500px);
   justify-self: end;
   padding: 0 0 7% 7%;
 }
@@ -602,8 +626,13 @@ button { color: inherit; font: inherit; }
 
   .statement-copy p br { display: none; }
   .standard-list { margin-top: 58px; }
+  .about .section-index,
+  .about-copy,
+  .portrait { grid-column: 1; grid-row: auto; }
+  .about .section-index { margin-bottom: 36px; }
   .about-copy { margin-bottom: 58px; }
   .about-description { margin-top: 36px; }
+  .about-focus { margin-top: 32px; }
   .portrait { justify-self: start; width: min(100%, 440px); }
   .projects-heading { display: block; }
   .projects-heading h2 { margin-top: 14px; }
