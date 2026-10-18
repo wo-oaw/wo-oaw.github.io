@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Call Me Baby 실시간 영상통화 서비스의 백엔드·인프라 프로젝트 케이스 스터디" />
+    <meta name="theme-color" content="#fff9ee" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../project-detail.css" />
+    <link rel="stylesheet" href="./callmebaby.css?v=20261018-service-intro-2" />
+    <title>Call Me Baby | 임건애 포트폴리오</title>
+  </head>
+  <body class="callmebaby-project">
+    <a class="skip-link" href="#project-main">본문으로 바로가기</a>
+
+    <header class="project-header" data-header data-current-theme="light">
+      <a class="project-brand" href="../../" aria-label="포트폴리오 처음으로">IM GEONAE</a>
+      <nav class="project-nav" aria-label="프로젝트 상세 메뉴">
+        <a href="../../#projects">← ALL PROJECTS</a>
+        <a href="#overview">OVERVIEW</a>
+        <a href="#stack">STACK</a>
+        <a href="#decisions">DECISIONS</a>
+      </nav>
+    </header>
+
+    <main id="project-main">
+      <section class="project-hero" data-theme="light">
+        <div class="hero-topline">
+          <p>CASE STUDY · 2026</p>
+          <p class="preview-label">BACKEND · REALTIME · INFRASTRUCTURE</p>
+        </div>
+        <h1>CALL ME<br /><span>BABY</span></h1>
+        <p class="hero-lede">멀리 있어도, 마음은 늘 가까이</p>
+
+        <dl class="project-meta">
+          <div><dt>ROLE</dt><dd>Backend · Infra</dd></div>
+          <div><dt>WORK LOG</dt><dd>2026.07.20 — 08.05</dd></div>
+          <div><dt>TEAM</dt><dd>6명</dd></div>
+          <div><dt>FOCUS</dt><dd>Realtime · CI/CD · GPU STT</dd></div>
+        </dl>
+
+        <figure class="hero-cover presentation-cover" id="presentation">
+          <div class="presentation-carousel" aria-roledescription="carousel" aria-label="Call Me Baby 최종 발표 자료 슬라이드">
+            <div class="presentation-stage" tabindex="0" aria-label="발표 슬라이드. 좌우 방향키나 드래그로 넘길 수 있습니다">
+              <div class="presentation-slide is-active" data-slide-number="01" data-slide-title="표지" aria-hidden="false">
+                <img src="../../assets/callmebaby/cover-slide.png" alt="멀　　리 있어도, 마음은 늘 가까이 — 콜미베이비 발표 표지" draggable="false" />
+              </div>
+            </div>
+            <figcaption class="presentation-caption">
+              <div class="presentation-caption-copy">
+                <span>PRESENTATION · 30 SLIDES</span>
+                <b id="presentation-slide-title">표지</b>
+              </div>
+              <div class="presentation-nav" aria-label="발표 슬라이드 이전 및 다음">
+                <button type="button" class="presentation-arrow presentation-prev" aria-label="이전 발표 슬라이드"><img src="../../assets/paceon/ui/arrow-left-rounded.svg" alt="" /></button>
+                <span id="presentation-slide-count" aria-live="polite">01 / 30 · SLIDE 01</span>
+                <button type="button" class="presentation-arrow presentation-next" aria-label="다음 발표 슬라이드"><img src="../../assets/paceon/ui/arrow-right-rounded.svg" alt="" /></button>
+              </div>
+            </figcaption>
+          </div>
+        </figure>
+      </section>
+
+      <section class="project-section section-grid" id="overview" data-theme="light" data-nav="overview">
+        <div class="section-label">01 / OVERVIEW</div>
+        <div class="section-heading">
+          <p class="eyebrow">PROJECT STORY</p>
+          <h2><span class="heading-line">통화가 끝나도</span> <span class="heading-line">대화는 이어지도록</span></h2>
+        </div>
+        <div class="section-body overview-copy">
+          <p class="lead-copy">Call Me Baby는 부모와 아이가 영상통화를 하며 그림을 그리고, 대화 속 관심사를 발견해 그림일기로 남기는 서비스입니다.</p>
+          <p>영상통화 중 생기는 음성·그림·참가자 이벤트가 서로 다른 서버를 거칩니다. 이 흐름을 백엔드에서 연결하고, 여러 서비스를 같은 방식으로 배포·검증할 수 있는 환경을 만들었습니다.</p>
+          <aside class="ownership-note">
+            <b>MY OWNERSHIP</b>
+            <p>Spring Boot의 통화 상태와 실시간 이벤트 흐름을 구현·검토하고 보완했습니다. Jenkins 기반 선택 배포, EC2의 dev/prod 분리, GCP T4의 STT 배포와 통합 검증을 담당했습니다.</p>
+          </aside>
+        </div>
+        <div class="project-facts overview-facts" aria-label="Call Me Baby 프로젝트 핵심 작업 요약">
+          <div><b>STT → SSE</b><span>실제 통화에서 관심사 추천이 부모 화면에 도착하는 흐름 검증</span></div>
+          <div><b>DEV / PROD</b><span>이미지·컨테이너·포트·볼륨·도메인 분리</span></div>
+          <div><b>SELECTIVE</b><span>변경된 서비스만 Jenkins로 빌드·배포</span></div>
+        </div>
+      </section>
+
+      <section class="service-section" id="experience" data-theme="light" data-nav="overview">
+        <div class="service-intro">
+          <div class="section-label">02 / SERVICE EXPERIENCE</div>
+          <div class="service-intro-heading">
+            <p class="eyebrow">THREE MOMENTS</p>
+            <h2><span class="heading-line">함께 그리고</span> <span class="heading-line">발견하고</span> <span class="heading-line">기록합니다</span></h2>
+          </div>
+          <p>통화 화면의 실시간 협업부터 관심사 추천, 통화 후 그림일기까지 하나의 경험으로 이어집니다.</p>
+        </div>
+        <div class="service-scenes">
+          <article class="service-scene">
+            <div class="scene-copy"><span>DRAW</span><h3>같이 그리는 통화</h3><p>LiveKit 영상통화 중 공동 그림 이벤트를 주고받고, 복구에 필요한 화면 상태는 Redis Snapshot으로 관리합니다.</p></div>
+            <img src="../../assets/callmebaby/presentation/animated/slide-03.gif" alt="영상통화에서 함께 그림을 그리는 화면" loading="lazy" />
+          </article>
+          <article class="service-scene">
+            <div class="scene-copy"><span>DISCOVER</span><h3>대화에서 찾는 관심사</h3><p>아이의 음성을 STT로 변환하고, 관심사 후보를 부모 화면에 SSE로 전달하는 흐름을 검증했습니다.</p></div>
+            <img src="../../assets/callmebaby/presentation/animated/slide-06.gif" alt="아이의 대화에서 관심사를 찾아 추천하는 화면" loading="lazy" />
+          </article>
+          <article class="service-scene">
+            <div class="scene-copy"><span>REMEMBER</span><h3>그림일기로 남기는 추억</h3><p>통화 후 그림과 대화 맥락을 바탕으로 하루를 기록하는 기능입니다. AI 서비스는 백엔드와 분리해 배포했습니다.</p></div>
+            <img src="../../assets/callmebaby/presentation/animated/slide-08.gif" alt="그림일기를 생성하고 확인하는 화면" loading="lazy" />
+          </article>
+        </div>
+      </section>
+
+      <section class="realtime-section" id="realtime" data-theme="dark" data-nav="stack">
+        <div class="section-label">03 / REALTIME BACKEND</div>
+        <div class="realtime-heading">
+          <div><p class="eyebrow">ONE CONVERSATION, MANY BOUNDARIES</p><h2>아이의 한마디가<br />부모에게 닿기까지</h2></div>
+          <p>영상통화 안에서 나온 음성이 GCP의 STT, Spring Boot, 관심사 AI를 지나 부모 화면으로 돌아옵니다. 각 연결 지점을 나눠 확인했습니다.</p>
+        </div>
+        <ol class="realtime-flow" aria-label="실시간 음성에서 관심사 추천까지의 처리 순서">
+          <li><span>01</span><b>LIVEKIT</b><small>아이 음성 Track</small></li>
+          <li><span>02</span><b>STT AGENT</b><small>통화방별 Agent</small></li>
+          <li><span>03</span><b>GCP T4</b><small>Whisper 추론</small></li>
+          <li><span>04</span><b>SPRING API</b><small>발화 전달</small></li>
+          <li><span>05</span><b>INTEREST AI</b><small>관심사 후보</small></li>
+          <li><span>06</span><b>PARENT SSE</b><small>추천 알림</small></li>
+        </ol>
+        <p class="realtime-proof">실제 통화방 로그에서 Agent 접속부터 발화 전달, 관심사 후보 생성, 부모 SSE 수신까지 확인했습니다.</p>
+      </section>
+
+      <section class="architecture-section-cmb project-section" id="architecture" data-theme="light" data-nav="stack">
+        <div class="section-label">04 / ARCHITECTURE</div>
+        <div class="architecture-copy">
+          <p class="eyebrow">SYSTEM OVERVIEW</p>
+          <h2>웹·API·AI를<br />분리해 배포했습니다</h2>
+          <p>웹 화면은 Vercel, API와 CPU 기반 AI는 EC2, 실시간 음성 인식은 GCP T4에서 실행했습니다. 모델 파일은 Docker 이미지 대신 서버 Volume에 두었습니다.</p>
+        </div>
+        <div class="system-map" aria-label="Call Me Baby 시스템 배포 구조">
+          <div class="system-map-row"><span>CLIENT</span><strong>부모 · 아이 브라우저</strong><small>영상통화 · 그림 · 알림</small></div>
+          <div class="system-map-row"><span>VERCEL</span><strong>React / Vite</strong><small>프론트엔드 배포</small></div>
+          <div class="system-map-row emphasized"><span>EC2</span><strong>Spring Boot · LiveKit · MySQL · Redis</strong><small>Caddy HTTPS · Interest AI · Diary AI</small></div>
+          <div class="system-map-row"><span>GCP T4</span><strong>STT Agent Manager · Whisper API</strong><small>GPU 추론 · 모델 Volume</small></div>
+          <div class="system-map-row"><span>STORAGE</span><strong>AWS S3</strong><small>Private 이미지 · Presigned URL</small></div>
+        </div>
+      </section>
+
+      <section class="delivery-section" id="delivery" data-theme="yellow" data-nav="stack">
+        <div class="section-label">05 / DELIVERY</div>
+        <div class="delivery-title"><p class="eyebrow">SELECTIVE DEPLOYMENT</p><h2>바뀐 서비스만<br />빌드하고 배포합니다</h2></div>
+        <div class="delivery-body">
+          <p>GitLab의 Merge Commit을 기준으로 변경 파일을 확인합니다. Jenkins가 필요한 대상만 빌드해 EC2, GCP 또는 Vercel로 보낸 뒤 Health Check와 알림으로 결과를 확인합니다.</p>
+          <div class="delivery-chain" aria-label="배포 절차"><span>GITLAB MERGE</span><span>JENKINS</span><span>IMAGE / VERCEL</span><span>HEALTH CHECK</span></div>
+          <div class="environment-note"><b>DEV / PROD</b><p>같은 EC2에서도 이미지 태그, 컨테이너, 포트, 볼륨, 도메인을 분리했습니다. develop과 main의 배포 대상이 섞이지 않도록 Jenkins 설정도 환경별로 계산합니다.</p></div>
+        </div>
+      </section>
+
+      <section class="stack-section" id="stack" data-theme="dark" data-nav="stack">
+        <div class="stack-intro">
+          <div class="section-label">06 / STACK &amp; SCOPE</div>
+          <p class="eyebrow">WHAT I WORKED ON</p>
+          <h2><span class="heading-line">기술 선택보다</span> <span class="heading-line">설계를 먼저</span></h2>
+          <p>팀 전체 기능과 직접 담당한 부분을 구분했습니다. 아래 항목은 구현·구축·검증한 범위를 중심으로 정리했습니다.</p>
+        </div>
+        <div class="stack-accordion">
+          <details open><summary>BACKEND &amp; REALTIME <b>SPRING · REDIS · LIVEKIT</b></summary><div class="accordion-content"><p>통화 상태의 Lock과 TTL, 중복 요청 처리, 참가자 이벤트 동기화, 공동 그림 Snapshot을 구현 상태에 맞게 보완했습니다. 인증·사용자 도메인은 기존 구현을 검토하고 API 계약을 맞췄습니다.</p><ul><li>Spring Boot</li><li>Redis</li><li>LiveKit</li><li>SSE</li><li>MySQL</li></ul></div></details>
+          <details><summary>DEPLOYMENT <b>JENKINS · DOCKER</b></summary><div class="accordion-content"><p>GitLab Webhook부터 선택 배포, Docker 이미지 Push, Compose 배포, Health Check, Mattermost 알림까지 연결했습니다. 프론트엔드는 Jenkins에서 Vercel CLI를 호출했습니다.</p><ul><li>Jenkins</li><li>Docker Compose</li><li>GitLab</li><li>Vercel</li><li>Caddy</li></ul></div></details>
+          <details><summary>AI OPERATIONS <b>EC2 · GCP T4</b></summary><div class="accordion-content"><p>Interest AI와 Diary AI는 EC2, Whisper STT와 Agent Manager는 GCP T4에 배포했습니다. 실제 통화에서 STT 결과가 관심사 추천까지 이어지는 흐름을 확인했습니다.</p><ul><li>FastAPI</li><li>Whisper</li><li>GCP T4</li><li>AWS S3</li></ul></div></details>
+        </div>
+      </section>
+
+      <section class="project-section decisions-section" id="decisions" data-theme="light" data-nav="decisions">
+        <div class="section-label">07 / DECISIONS</div>
+        <div class="decision-list">
+          <article><span>01</span><div class="decision-title"><p>ENVIRONMENT</p><h3>Health Check Timeout</h3></div><div class="decision-copy"><p>Jenkins 대기 시간이 아니라 Compose에서 AI URL 환경변수가 컨테이너에 전달되지 않아 Spring 설정 Binding이 실패한 문제였습니다. Repository의 Compose 설정을 수정해 배포 시 같은 값이 전달되도록 했습니다.</p></div></article>
+          <article><span>02</span><div class="decision-title"><p>CI/CD</p><h3>Vercel 빌드 경로</h3></div><div class="decision-copy"><p>Jenkins 컨테이너 안에서 다시 띄운 Node 컨테이너는 Docker Host 기준 경로를 마운트해 소스를 찾지 못했습니다. 실행 경계를 확인하고 배포 경로를 Jenkins 기준으로 정리했습니다.</p></div></article>
+          <article><span>03</span><div class="decision-title"><p>BROWSER POLICY</p><h3>저장되지 않는 Cookie</h3></div><div class="decision-copy"><p>CSRF 응답과 Set-Cookie는 정상이어도 서로 다른 최상위 도메인 때문에 브라우저가 Cookie를 저장하지 않았습니다. Dev Frontend를 서비스 하위 도메인으로 연결해 인증 경계를 맞췄습니다.</p></div></article>
+        </div>
+      </section>
+
+      <section class="result-section" id="results" data-theme="light" data-nav="decisions">
+        <div class="section-label">08 / VERIFIED RESULT</div>
+        <div class="result-heading"><p class="eyebrow">ONE MEASURED SAMPLE</p><h2>실제 통화에서<br />끝까지 확인했습니다</h2></div>
+        <div class="result-content"><div class="sample-metric"><div class="metric-item"><strong>8.064<span>s</span></strong><small>음성 샘플 길이</small></div><span class="metric-arrow" aria-hidden="true">→</span><div class="metric-item"><strong>0.913<span>s</span></strong><small>Whisper 추론 시간</small></div></div><p>위 수치는 샘플 WAV 1건의 추론 측정값입니다. 별도의 실제 통화 검증에서는 STT Agent 접속, 발화 전달, 관심사 후보 생성, 부모 SSE 알림까지 연결해 확인했습니다.</p></div>
+      </section>
+
+      <section class="closing-section" data-theme="bright">
+        <div><p class="eyebrow">CALL ME BABY</p><h2>대화가 이어지는 동안,<br />시스템도 이어지도록</h2></div>
+        <p>실시간 흐름을 작은 경계로 나눠 확인하고, 다시 실행해도 같은 결과가 나오는 배포 구조를 만들었습니다.</p>
+      </section>
+
+      <nav class="project-pagination" aria-label="프로젝트 이동">
+        <a href="../paceon/"><span>PREVIOUS PROJECT</span><b>PACEON ↗</b></a>
+        <a class="next-project" href="../../#creditto"><span>NEXT PROJECT</span><b>CREDITTO →</b></a>
+      </nav>
+    </main>
+
+    <footer class="project-footer"><span>© 2026 IM GEONAE</span><a href="../../">BACK TO HOME ↑</a></footer>
+    <script src="./callmebaby.js" defer></script>
+  </body>
+</html>
