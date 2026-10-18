@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PaceOn 러닝 서비스 백엔드·인프라 프로젝트 케이스 스터디" />
+    <meta name="theme-color" content="#f4f4f0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../project-detail.css?v=20261018-25" />
+    <title>PaceOn | 임건애 포트폴리오</title>
+  </head>
+  <body class="paceon-project">
+    <a class="skip-link" href="#project-main">본문으로 바로가기</a>
+
+    <header class="project-header" data-header data-current-theme="light">
+      <a class="project-brand" href="../../" aria-label="포트폴리오 처음으로">IM GEONAE</a>
+      <nav class="project-nav" aria-label="프로젝트 상세 메뉴">
+        <a href="../../#projects">← ALL PROJECTS</a>
+        <a href="#overview">OVERVIEW</a>
+        <a href="#stack">STACK</a>
+        <a href="#decisions">DECISIONS</a>
+      </nav>
+    </header>
+
+    <main id="project-main">
+      <section class="project-hero" data-theme="light">
+        <div class="hero-topline">
+          <p>CASE STUDY · 2026</p>
+          <p class="preview-label">BACKEND · INFRASTRUCTURE</p>
+        </div>
+        <h1>PACE<span>ON</span></h1>
+        <p class="hero-lede">나의 페이스를 찾아가는 러닝 서비스</p>
+
+        <dl class="project-meta">
+          <div><dt>ROLE</dt><dd>Backend · Infra</dd></div>
+          <div><dt>PERIOD</dt><dd>2026.08.18 — 09.28</dd></div>
+          <div><dt>TEAM</dt><dd>6명</dd></div>
+          <div><dt>SCOPE</dt><dd>15 APIs · CI/CD · E2E</dd></div>
+        </dl>
+
+        <figure class="hero-cover presentation-cover" id="presentation">
+          <div class="presentation-carousel" aria-roledescription="carousel" aria-label="PaceOn 전체 발표 자료">
+            <div class="presentation-stage" tabindex="0">
+              <div class="presentation-slide is-active" data-slide-number="01" data-slide-title="PaceOn" aria-hidden="false">
+                <img src="../../assets/paceon/presentation/slide-01.png?v=20261018-25" alt="PaceOn 나의 페이스를 찾아가는 러닝 서비스 표지 슬라이드" />
+              </div>
+              <div class="presentation-slide" data-slide-number="02" data-slide-title="워치 측정" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-02.png" alt="거리와 페이스, 심박을 측정하는 워치의 역할 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="03" data-slide-title="모바일 안내" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-03.png" alt="실시간 현황과 음성 안내를 제공하는 휴대폰의 역할 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="04" data-slide-title="오런완" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-04.png" alt="오늘의 러닝을 나만의 한 장으로 꾸미는 오런완 기능 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-compact" data-src="../../assets/paceon/presentation/slide-04.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="05" data-slide-title="기능 소개" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-05.png" alt="PaceOn 기능 소개 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="06" data-slide-title="개인 맞춤형 러닝" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-06.png" alt="개인 맞춤형 러닝 기능 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="07" data-slide-title="초기 3회 테스트" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-07.png" alt="사용자 수준을 파악하기 위한 초기 3회 러닝 테스트 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-07.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="08" data-slide-title="VDOT 업데이트" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-08.png" alt="테스트 결과를 반영해 VDOT과 러닝 처방을 갱신하는 과정 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="09" data-slide-title="러닝 시간·강도 조절" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-09.png" alt="개인 일정과 상태에 맞게 러닝 시간과 강도를 조절하는 기능 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-09.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="10" data-slide-title="포포 음성 안내" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-10.png" alt="포포 음성 안내 기능 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="11" data-slide-title="상황별 음성 안내" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-11.png" alt="달리는 동안 필요한 순간에 제공되는 음성 안내 기능 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-11.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="12" data-slide-title="거리 간격·메트로놈" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-12.png" alt="거리 안내 간격과 메트로놈 기능 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-12.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="13" data-slide-title="개인 맞춤형 러닝 리포트" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-13.png" alt="개인 맞춤형 러닝 리포트 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="14" data-slide-title="러닝 기록과 성장" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-14.png" alt="구간별 흐름과 심박 변화, 수행 결과를 보여주는 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-14.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="15" data-slide-title="AI 러닝 리포트" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-15.png" alt="러닝 결과를 분석해 다음 러닝을 제안하는 AI 리포트 소개 슬라이드" decoding="async" />
+                <video class="presentation-video presentation-video-phone" data-src="../../assets/paceon/presentation/slide-15.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+              </div>
+              <div class="presentation-slide" data-slide-number="16" data-slide-title="기술 소개" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-16.png" alt="PaceOn 기술 소개 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="17" data-slide-title="데이터 누락 방지" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-17.png" alt="데이터 누락 방지 기술 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="18" data-slide-title="전달과 보존 분리" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-18.png" alt="실시간 화면 갱신과 원본 데이터 보존을 분리한 구조 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="19" data-slide-title="연결 단절 시 원본 유지" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-19.png" alt="연결이 끊겨도 원본 데이터를 유지하는 처리 흐름 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="20" data-slide-title="Batch ID·Hash 검증" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-20.png" alt="Batch ID와 Hash를 함께 확인하는 중복 데이터 검증 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="21" data-slide-title="전송 자동 복구" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-21.png" alt="실패한 데이터 전송을 자동으로 복구하는 흐름 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="22" data-slide-title="데이터 분산 처리" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-22.png" alt="Kafka와 HDFS, Spark를 활용한 데이터 분산 처리 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="23" data-slide-title="데이터 처리 구조" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-23.png" alt="사용자 기기부터 분석 모델까지 이어지는 데이터 처리 구조 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="24" data-slide-title="TTS 음성 안내" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-24.png" alt="TTS를 활용한 음성 안내 기술 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="25" data-slide-title="상황별 음성 재생" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-25.png" alt="러닝 상황에 맞는 음성을 재생하는 기능 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="26" data-slide-title="실시간 생성 지연" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-26.png" alt="실시간 음성 생성 지연과 이동 거리 문제를 설명하는 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="27" data-slide-title="음성 사전 생성" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-27.png" alt="러닝 전 음성을 미리 생성해 즉시 재생하는 구조 소개 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="28" data-slide-title="시스템 아키텍처" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-28.png" alt="PaceOn 시스템 아키텍처 구분 슬라이드" decoding="async" />
+              </div>
+              <div class="presentation-slide" data-slide-number="29" data-slide-title="시스템 아키텍처 상세" aria-hidden="true">
+                <img data-src="../../assets/paceon/presentation/slide-29.png" alt="PaceOn 전체 시스템 아키텍처 상세 슬라이드" decoding="async" />
+              </div>
+            </div>
+
+            <figcaption class="presentation-caption">
+              <div class="presentation-caption-copy">
+                <span>PRESENTATION · FULL DECK</span>
+                <b id="presentation-slide-title">PaceOn</b>
+              </div>
+              <div class="presentation-nav" aria-label="발표 슬라이드 이전 및 다음">
+                <button type="button" class="presentation-arrow presentation-prev" aria-label="이전 발표 슬라이드"><img src="../../assets/paceon/ui/arrow-left-rounded.svg" alt="" /></button>
+                <span id="presentation-slide-count" aria-live="polite">01 / 29 · SLIDE 01</span>
+                <button type="button" class="presentation-arrow presentation-next" aria-label="다음 발표 슬라이드"><img src="../../assets/paceon/ui/arrow-right-rounded.svg" alt="" /></button>
+              </div>
+            </figcaption>
+          </div>
+        </figure>
+      </section>
+
+      <section class="project-section section-grid" id="overview" data-theme="light" data-nav="overview">
+        <div class="section-label">01 / OVERVIEW</div>
+        <div class="section-heading">
+          <p class="eyebrow">PROJECT STORY</p>
+          <h2>측정부터 리포트까지<br />끊기지 않는 러닝 흐름</h2>
+        </div>
+        <div class="section-body overview-copy">
+          <p class="lead-copy">PaceOn은 Wear OS 워치와 모바일을 연결해 개인의 수행 수준에 맞는 러닝을 안내하는 서비스입니다</p>
+          <p>처음 세 번의 테스트로 러너의 상태를 파악하고, 달리는 동안에는 거리·페이스·심박을 기록합니다. 종료 후에는 구간별 흐름과 수행 결과를 분석해 다음 러닝을 위한 리포트와 제안을 제공합니다</p>
+          <aside class="ownership-note">
+            <b>MY OWNERSHIP</b>
+            <p>Spring Boot 백엔드와 인프라·CI/CD를 맡아 러닝 수집·종료·리포트·처방 API와 Kafka 이벤트 경계를 구현하고, 실제 서버에서 Postman·SQL·로그 기반 E2E를 수행했습니다</p>
+          </aside>
+        </div>
+
+        <div class="project-facts" aria-label="PaceOn 프로젝트 주요 결과">
+          <div><b>15</b><span>PUBLIC APIs</span></div>
+          <div><b>2</b><span>SERVICE · DATA SERVERS</span></div>
+          <div><b>1,152</b><span>MESSAGES RECOVERED</span></div>
+          <div><b>0</b><span>FINAL KAFKA LAG</span></div>
+        </div>
+      </section>
+
+      <section class="motion-section" id="motion" data-theme="purple" data-nav="overview">
+        <div class="motion-copy">
+          <div class="section-label">02 / SERVICE IN MOTION</div>
+          <p class="eyebrow">WATCH &amp; MOBILE EXPERIENCE</p>
+          <h2><span>측정은 워치가</span><span>안내는 휴대폰이</span></h2>
+          <p class="motion-description">달리는 순간을 놓치지 않도록 기기마다 역할을 나눴습니다. 워치는 몸과 움직임에 가까운 기록을 수집하고, 휴대폰은 러닝 흐름을 이어갈 안내를 제공합니다</p>
+          <div class="device-roles" aria-label="PaceOn 기기별 역할">
+            <div>
+              <span>WATCH</span>
+              <b>거리 · 페이스 · 심박 측정</b>
+            </div>
+            <div>
+              <span>PHONE</span>
+              <b>실시간 현황 · 음성 안내 · 메트로놈</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-gallery" aria-label="PaceOn 서비스 이용 흐름">
+          <figure class="phone-card phone-card-secondary">
+            <div class="phone-device">
+              <div class="phone-screen has-media">
+                <img src="../../assets/paceon/initial-test.gif" alt="초기 러닝 테스트와 맞춤 처방을 설정하는 PaceOn 화면" loading="lazy" decoding="async" />
+              </div>
+              <img class="android-phone-frame" src="../../assets/paceon/android-phone-frame.png" alt="" aria-hidden="true" />
+            </div>
+            <figcaption>01 · INITIAL TEST</figcaption>
+          </figure>
+          <figure class="phone-card phone-card-primary">
+            <div class="phone-device">
+              <div class="phone-screen has-media">
+                <img src="../../assets/paceon/live-running.gif" alt="워치 측정값과 휴대폰 안내가 연결된 PaceOn 실시간 러닝 화면" loading="lazy" decoding="async" />
+              </div>
+              <img class="android-phone-frame" src="../../assets/paceon/android-phone-frame.png" alt="" aria-hidden="true" />
+            </div>
+            <figcaption>02 · LIVE GUIDANCE</figcaption>
+          </figure>
+          <figure class="phone-card phone-card-secondary">
+            <div class="phone-device">
+              <div class="phone-screen has-media">
+                <img src="../../assets/paceon/ai-report.gif" alt="러닝 결과와 AI 해설을 확인하는 PaceOn 리포트 화면" loading="lazy" decoding="async" />
+              </div>
+              <img class="android-phone-frame" src="../../assets/paceon/android-phone-frame.png" alt="" aria-hidden="true" />
+            </div>
+            <figcaption>03 · AI REPORT</figcaption>
+          </figure>
+        </div>
+
+        <div class="watch-showcase">
+          <div class="watch-carousel">
+            <figure class="watch-device-card">
+              <div class="watch-device">
+                <img id="watch-device-screen" class="watch-device-screen" src="../../assets/paceon/watch-character.png" alt="러닝 중 캐릭터를 보여주는 PaceOn 워치 화면" loading="lazy" decoding="async" draggable="false" />
+                <img class="watch-device-frame" src="../../assets/paceon/galaxy-watch-frame.png" alt="" aria-hidden="true" />
+              </div>
+              <figcaption id="watch-screen-caption">RUNNING · CHARACTER</figcaption>
+            </figure>
+            <div class="watch-carousel-nav" aria-label="워치 화면 이전 및 다음">
+              <button type="button" class="watch-arrow watch-prev" aria-label="이전 워치 화면">←</button>
+              <span id="watch-screen-count" aria-live="polite">01 / 04</span>
+              <button type="button" class="watch-arrow watch-next" aria-label="다음 워치 화면">→</button>
+            </div>
+          </div>
+
+          <div class="watch-copy">
+            <p class="eyebrow">WEAR OS EXPERIENCE</p>
+            <h3>손목에서는<br />필요한 수치만</h3>
+            <p class="watch-description">러닝 중에는 캐릭터·심박·페이스·거리 화면을 좌우로 넘겨 확인합니다. 워치는 측정에 집중하고 시작과 안내의 중심은 휴대폰에 두었습니다</p>
+            <div class="watch-screen-controls" role="group" aria-label="워치 러닝 화면 선택">
+              <button type="button" class="watch-screen-control is-active" data-index="0" data-src="../../assets/paceon/watch-character.png" data-alt="러닝 중 캐릭터를 보여주는 PaceOn 워치 화면" data-caption="RUNNING · CHARACTER" aria-pressed="true"><span>01</span>캐릭터</button>
+              <button type="button" class="watch-screen-control" data-index="1" data-src="../../assets/paceon/watch-heart-rate.png" data-alt="러닝 중 심박수를 보여주는 PaceOn 워치 화면" data-caption="RUNNING · HEART RATE" aria-pressed="false"><span>02</span>심박</button>
+              <button type="button" class="watch-screen-control" data-index="2" data-src="../../assets/paceon/watch-pace.png" data-alt="러닝 중 페이스를 보여주는 PaceOn 워치 화면" data-caption="RUNNING · PACE" aria-pressed="false"><span>03</span>페이스</button>
+              <button type="button" class="watch-screen-control" data-index="3" data-src="../../assets/paceon/watch-distance.png" data-alt="러닝 중 거리를 보여주는 PaceOn 워치 화면" data-caption="RUNNING · DISTANCE" aria-pressed="false"><span>04</span>거리</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stack-section" id="stack" data-theme="dark" data-nav="stack">
+        <div class="stack-intro">
+          <div class="section-label">03 / STACK &amp; OWNERSHIP</div>
+          <p class="eyebrow">MY SCOPE · TEAM TECHNOLOGY</p>
+          <h2>기술 이름보다<br />어디에 썼는지</h2>
+          <p>보라색 MY SCOPE는 제가 직접 구현·배포·검증한 영역이고, TEAM은 협업 과정에서 연결한 팀 기술입니다</p>
+        </div>
+
+        <div class="stack-accordion">
+          <details open>
+            <summary><span>BACKEND</span><b>MY SCOPE</b></summary>
+            <div class="accordion-content">
+              <p>러닝 세션 생성부터 원본 배치 수신, 누락 확인, 스트림 종료, 리포트·처방·뱃지 조회까지 공개 API 15개를 구현했습니다. DB 제약과 잠금, Redis 원자 연산으로 중복 요청과 동시성을 방어했습니다</p>
+              <ul><li>JAVA 17</li><li>SPRING BOOT 3.5</li><li>JPA · JDBC</li><li>POSTGRESQL 17</li><li>REDIS</li></ul>
+            </div>
+          </details>
+          <details>
+            <summary><span>EVENT &amp; DATA INTEGRATION</span><b>MY SCOPE</b></summary>
+            <div class="accordion-content">
+              <p><code>run.raw</code>, <code>run.ended</code>, <code>run.reprocess</code>, <code>run.report.ready</code> 경계를 구현하고 Kafka·HDFS·리포트 Worker·모델 서비스 사이의 계약과 장애 복구 흐름을 검증했습니다</p>
+              <ul><li>KAFKA 3.9</li><li>HDFS 3.4</li><li>PYSPARK 3.5</li><li>DLT · RELAY</li></ul>
+            </div>
+          </details>
+          <details>
+            <summary><span>INFRASTRUCTURE &amp; CI/CD</span><b>MY SCOPE</b></summary>
+            <div class="accordion-content">
+              <p>비권한 GitLab Runner에서 Jib으로 OCI 이미지를 빌드해 Docker Hub에 발행하고, AWS Lightsail의 서비스·데이터 서버에 Docker Compose로 배포했습니다. 개발은 자동, 운영은 수동 승인으로 분리했습니다</p>
+              <ul><li>GITLAB CI</li><li>JIB</li><li>DOCKER COMPOSE</li><li>NGINX</li><li>AWS LIGHTSAIL</li></ul>
+            </div>
+          </details>
+          <details>
+            <summary><span>CLIENT &amp; PRODUCT</span><b class="team-scope">TEAM</b></summary>
+            <div class="accordion-content">
+              <p>Flutter Android 앱과 Kotlin Wear OS가 만든 러닝 경험에 맞춰 배치 재전송, 테스트 상태, 처방·리포트 API 계약을 조율했습니다. 러닝 분석 모델은 데이터·AI 담당과 연동했습니다</p>
+              <ul><li>FLUTTER</li><li>WEAR OS</li><li>GOOGLE MAPS</li><li>MODEL SERVICE</li></ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="project-section architecture-section" id="architecture" data-theme="light" data-nav="stack">
+        <div class="section-label">04 / ARCHITECTURE</div>
+        <div class="architecture-heading">
+          <p class="eyebrow">SYSTEM OVERVIEW</p>
+          <h2><span>사용자 결과와</span><span>원본 보관을 분리</span></h2>
+          <p>실시간 리포트는 PostgreSQL과 Worker·모델 서비스가 만들고, 원본 데이터는 Kafka에서 HDFS로 보관합니다. Spark는 누적 원본을 주간 단위로 집계합니다</p>
+        </div>
+        <figure class="architecture-board" aria-label="워치와 모바일에서 수집한 러닝 데이터가 실시간 사용자 결과와 원본 데이터 집계 흐름으로 나뉘어 처리되는 구조">
+          <div class="architecture-lane result-lane">
+            <b class="lane-title">USER RESULT</b>
+            <div class="flow-stage result-flow-stage">
+              <svg class="flow-diagram" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="result-beam" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#6f4cf3" stop-opacity=".28" />
+                    <stop offset=".5" stop-color="#8f78ff" stop-opacity=".72" />
+                    <stop offset="1" stop-color="#6f4cf3" stop-opacity=".28" />
+                  </linearGradient>
+                </defs>
+                <path class="flow-path" d="M 105 60 C 190 24 280 24 365 60 S 540 96 635 60 S 810 24 895 60" />
+                <circle class="data-packet data-packet-primary" r="7">
+                  <animateMotion dur="6.4s" repeatCount="indefinite" path="M 105 60 C 190 24 280 24 365 60 S 540 96 635 60 S 810 24 895 60" />
+                </circle>
+                <circle class="data-packet data-packet-secondary" r="4" opacity="0">
+                  <animate attributeName="opacity" from="0" to="1" begin="3.2s" dur=".01s" fill="freeze" />
+                  <animateMotion begin="3.2s" dur="6.4s" repeatCount="indefinite" path="M 105 60 C 190 24 280 24 365 60 S 540 96 635 60 S 810 24 895 60" />
+                </circle>
+              </svg>
+              <ol class="pipeline result-pipeline">
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>WATCH · MOBILE</b><small>측정 · 재전송</small></span>
+                </li>
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>SPRING API</b><small>수신 · 누락 확인</small></span>
+                </li>
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>POSTGRESQL</b><small>멱등성 · 상태</small></span>
+                </li>
+                <li>
+                  <span class="tech-icon tech-icon-pair">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" />
+                  </span>
+                  <span class="pipeline-copy"><b>WORKER · MODEL</b><small>분석 · 결과 저장</small></span>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="architecture-lane data-lane">
+            <b class="lane-title">RAW DATA &amp; WEEKLY AGGREGATION</b>
+            <div class="flow-stage data-flow-stage">
+              <svg class="flow-diagram" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="raw-beam" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#6f4cf3" stop-opacity=".24" />
+                    <stop offset=".5" stop-color="#6f4cf3" stop-opacity=".64" />
+                    <stop offset="1" stop-color="#6f4cf3" stop-opacity=".24" />
+                  </linearGradient>
+                </defs>
+                <path class="flow-path" d="M 155 60 C 270 20 385 20 500 60 S 730 100 845 60" />
+                <circle class="data-packet partition-packet partition-packet-one" r="5">
+                  <animateMotion dur="5.8s" repeatCount="indefinite" path="M 155 60 C 270 20 385 20 500 60 S 730 100 845 60" />
+                </circle>
+                <circle class="data-packet partition-packet partition-packet-two" r="5" opacity="0">
+                  <animate attributeName="opacity" from="0" to="1" begin=".55s" dur=".01s" fill="freeze" />
+                  <animateMotion begin=".55s" dur="5.8s" repeatCount="indefinite" path="M 155 60 C 270 20 385 20 500 60 S 730 100 845 60" />
+                </circle>
+                <circle class="data-packet partition-packet partition-packet-three" r="5" opacity="0">
+                  <animate attributeName="opacity" from="0" to="1" begin="1.1s" dur=".01s" fill="freeze" />
+                  <animateMotion begin="1.1s" dur="5.8s" repeatCount="indefinite" path="M 155 60 C 270 20 385 20 500 60 S 730 100 845 60" />
+                </circle>
+              </svg>
+              <ol class="pipeline data-pipeline">
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>KAFKA</b><small>run_id · 3 partitions</small></span>
+                </li>
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hadoop/hadoop-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>HDFS</b><small>Raw · Summary</small></span>
+                </li>
+                <li>
+                  <span class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" alt="" /></span>
+                  <span class="pipeline-copy"><b>SPARK BATCH</b><small>사용자 · 주차 집계</small></span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="project-section decisions-section" id="decisions" data-theme="light" data-nav="decisions">
+        <div class="section-label">05 / KEY DECISIONS</div>
+        <div class="decision-list">
+          <article>
+            <span>01</span>
+            <div class="decision-title">
+              <p>DATA INTEGRITY</p>
+              <h3>연결이 끊겨도 원본을 잃지 않도록</h3>
+            </div>
+            <div class="decision-copy">
+              <p>실시간 화면 갱신과 원본 전달을 분리하고, 배치를 저장 완료 전까지 기기에 유지했습니다. 서버에서는 Batch ID와 SHA-256, DB 유니크 제약으로 같은 요청의 안전한 재전송과 충돌을 구분했습니다</p>
+              <ul><li>누락 구간 계산</li><li>지연 배치 완료 처리</li><li>원본 relay 복구</li></ul>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div class="decision-title">
+              <p>SECURE DELIVERY</p>
+              <h3>서버 권한을 낮춘 채 이미지를 빌드</h3>
+            </div>
+            <div class="decision-copy">
+              <p>비권한 Runner에서 Rootless BuildKit과 Buildah가 user namespace 제약으로 실패했습니다. privileged 권한과 Docker socket을 열지 않고 Jib으로 전환해 보안 경계를 유지했습니다</p>
+              <ul><li>privileged=false</li><li>Docker socket 미공유</li><li>개발 자동 · 운영 수동 배포</li></ul>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div class="decision-title">
+              <p>INCIDENT RECOVERY</p>
+              <h3>Kafka에 남은 원본 1,152건을 복구</h3>
+            </div>
+            <div class="decision-copy">
+              <p>HDFS가 0B인 상태에서 재전송부터 하지 않고 Kafka offset과 HDFS 403 응답을 먼저 확인했습니다. 조상 경로의 execute 권한만 최소 수정하고 저장 후 offset이 커밋되는 순서를 추적했습니다</p>
+              <ul><li>3개 파티션 보존 확인</li><li>1,152건 HDFS 적재</li><li>최종 consumer lag 0</li></ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-section" data-theme="accent" data-nav="decisions">
+        <div>
+          <p class="eyebrow">RESULT &amp; REFLECTION</p>
+          <h2>기능 구현을 넘어<br />복구 가능한 흐름까지</h2>
+        </div>
+        <p>이번 프로젝트에서 안정성은 오류가 없는 상태가 아니라, 중복과 부분 실패를 예상하고 상태를 확인하며 다시 이어갈 수 있는 구조라는 것을 배웠습니다. 자동 테스트 뒤에도 Postman·SQL·Kafka lag·컨테이너 로그로 실제 흐름을 끝까지 확인했습니다</p>
+      </section>
+
+      <nav class="project-pagination" aria-label="프로젝트 이동" data-theme="light">
+        <a href="../../#projects"><span>BACK</span><b>← ALL PROJECTS</b></a>
+        <a href="../../#projects" class="next-project"><span>PROJECT INDEX</span><b>CREDITTO →</b></a>
+      </nav>
+    </main>
+
+    <footer class="project-footer" data-theme="light"><span>IM GEONAE · BACKEND DEVELOPER</span><span>PACEON · 2026 · 6 PERSON TEAM</span></footer>
+    <script>
+      (() => {
+        const carousel = document.querySelector(".presentation-carousel");
+        if (!carousel) return;
+
+        const stage = carousel.querySelector(".presentation-stage");
+        const slides = Array.from(carousel.querySelectorAll(".presentation-slide"));
+        const previous = carousel.querySelector(".presentation-prev");
+        const next = carousel.querySelector(".presentation-next");
+        const count = carousel.querySelector("#presentation-slide-count");
+        const title = carousel.querySelector("#presentation-slide-title");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let currentIndex = 0;
+        let pointerStartX = null;
+        let pointerId = null;
+        let isVisible = true;
+
+        const stopVideo = (slide) => {
+          const video = slide.querySelector("video");
+          if (!video) return;
+          video.pause();
+          video.removeAttribute("src");
+          video.load();
+        };
+
+        const hydrateSlide = (slide) => {
+          const image = slide.querySelector("img[data-src]");
+          if (!image) return;
+          image.src = `${image.dataset.src}?v=20261018-25`;
+          image.removeAttribute("data-src");
+        };
+
+        const playVideo = (slide) => {
+          const video = slide.querySelector("video");
+          if (!video || reduceMotion.matches || !isVisible) return;
+          if (!video.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
+          video.play().catch(() => {});
+        };
+
+        const showSlide = (index, direction = "next") => {
+          const nextIndex = (index + slides.length) % slides.length;
+          if (nextIndex === currentIndex) return;
+
+          const outgoing = slides[currentIndex];
+          stopVideo(outgoing);
+          outgoing.classList.remove("is-active", "is-leaving-next", "is-leaving-previous");
+          outgoing.classList.add(direction === "previous" ? "is-leaving-previous" : "is-leaving-next");
+          outgoing.setAttribute("aria-hidden", "true");
+
+          currentIndex = nextIndex;
+          const incoming = slides[currentIndex];
+          hydrateSlide(incoming);
+          hydrateSlide(slides[(currentIndex + 1) % slides.length]);
+          hydrateSlide(slides[(currentIndex - 1 + slides.length) % slides.length]);
+          incoming.classList.remove("is-leaving-next", "is-leaving-previous");
+          incoming.classList.add("is-active");
+          incoming.setAttribute("aria-hidden", "false");
+          count.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")} · SLIDE ${incoming.dataset.slideNumber}`;
+          title.textContent = incoming.dataset.slideTitle;
+          playVideo(incoming);
+        };
+
+        previous.addEventListener("click", () => showSlide(currentIndex - 1, "previous"));
+        next.addEventListener("click", () => showSlide(currentIndex + 1, "next"));
+        stage.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") showSlide(currentIndex - 1, "previous");
+          if (event.key === "ArrowRight") showSlide(currentIndex + 1, "next");
+        });
+        stage.addEventListener("pointerdown", (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          pointerStartX = event.clientX;
+          pointerId = event.pointerId;
+          stage.setPointerCapture?.(event.pointerId);
+          stage.classList.add("is-dragging");
+        });
+        stage.addEventListener("pointermove", (event) => {
+          if (pointerStartX === null || event.pointerId !== pointerId) return;
+          const distance = Math.max(-120, Math.min(120, event.clientX - pointerStartX));
+          const activeSlide = slides[currentIndex];
+          activeSlide.style.transition = "none";
+          activeSlide.style.transform = `translateX(${distance * 0.35}px)`;
+        });
+        stage.addEventListener("pointerup", (event) => {
+          if (pointerStartX === null || event.pointerId !== pointerId) return;
+          const distance = event.clientX - pointerStartX;
+          const activeSlide = slides[currentIndex];
+          activeSlide.style.removeProperty("transition");
+          activeSlide.style.removeProperty("transform");
+          stage.classList.remove("is-dragging");
+          if (stage.hasPointerCapture?.(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+          if (Math.abs(distance) > 48) showSlide(currentIndex + (distance < 0 ? 1 : -1), distance < 0 ? "next" : "previous");
+          pointerStartX = null;
+          pointerId = null;
+        });
+        stage.addEventListener("pointercancel", (event) => {
+          const activeSlide = slides[currentIndex];
+          activeSlide.style.removeProperty("transition");
+          activeSlide.style.removeProperty("transform");
+          stage.classList.remove("is-dragging");
+          if (pointerId !== null && stage.hasPointerCapture?.(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+          pointerStartX = null;
+          pointerId = null;
+        });
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(([entry]) => {
+            isVisible = entry.isIntersecting;
+            if (isVisible) playVideo(slides[currentIndex]);
+            else stopVideo(slides[currentIndex]);
+          }, { threshold: 0.2 });
+          observer.observe(carousel);
+        }
+
+        reduceMotion.addEventListener?.("change", () => {
+          if (reduceMotion.matches) stopVideo(slides[currentIndex]);
+          else playVideo(slides[currentIndex]);
+        });
+
+        hydrateSlide(slides[0]);
+        hydrateSlide(slides[1]);
+        hydrateSlide(slides[slides.length - 1]);
+        playVideo(slides[0]);
+      })();
+
+      (() => {
+        const header = document.querySelector("[data-header]");
+        const themeSections = Array.from(document.querySelectorAll("[data-theme]"));
+        const navLinks = Array.from(document.querySelectorAll('.project-nav a[href^="#"]'));
+        let ticking = false;
+
+        const updateHeader = () => {
+          const marker = window.scrollY + 90;
+          let activeSection = themeSections[0];
+
+          themeSections.forEach((section) => {
+            if (section.offsetTop <= marker) activeSection = section;
+          });
+
+          header.dataset.currentTheme = activeSection?.dataset.theme || "light";
+          const activeNav = activeSection?.dataset.nav || "";
+
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${activeNav}`;
+            link.classList.toggle("is-active", isActive);
+            if (isActive) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+
+          ticking = false;
+        };
+
+        const requestHeaderUpdate = () => {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(updateHeader);
+        };
+
+        updateHeader();
+        window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
+        window.addEventListener("resize", requestHeaderUpdate);
+      })();
+
+      (() => {
+        const architecture = document.querySelector("#architecture");
+        if (!architecture) return;
+        const diagrams = Array.from(architecture.querySelectorAll(".flow-diagram"));
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let isVisible = false;
+
+        const setFlowState = (isActive) => {
+          const shouldPlay = isActive && !reduceMotion.matches;
+          architecture.classList.toggle("is-flowing", shouldPlay);
+          diagrams.forEach((diagram) => {
+            if (shouldPlay) diagram.unpauseAnimations?.();
+            else diagram.pauseAnimations?.();
+          });
+        };
+
+        if (!("IntersectionObserver" in window)) {
+          setFlowState(true);
+          return;
+        }
+
+        const observer = new IntersectionObserver(([entry]) => {
+          isVisible = entry.isIntersecting;
+          setFlowState(isVisible);
+        }, { threshold: 0.22 });
+
+        setFlowState(false);
+        reduceMotion.addEventListener?.("change", () => setFlowState(isVisible));
+        observer.observe(architecture);
+      })();
+
+      (() => {
+        const controls = Array.from(document.querySelectorAll(".watch-screen-control"));
+        const screen = document.querySelector("#watch-device-screen");
+        const caption = document.querySelector("#watch-screen-caption");
+        const count = document.querySelector("#watch-screen-count");
+        const previous = document.querySelector(".watch-prev");
+        const next = document.querySelector(".watch-next");
+        const device = document.querySelector(".watch-device");
+        let currentIndex = 0;
+        let pointerStartX = null;
+
+        controls.forEach((control) => {
+          const preload = new Image();
+          preload.src = control.dataset.src;
+        });
+
+        const showScreen = (index, direction = "next") => {
+          const nextIndex = (index + controls.length) % controls.length;
+          if (nextIndex === currentIndex) return;
+          currentIndex = nextIndex;
+          const selected = controls[currentIndex];
+          screen.src = selected.dataset.src;
+          screen.alt = selected.dataset.alt;
+          screen.classList.remove("screen-in-next", "screen-in-previous");
+          void screen.offsetWidth;
+          screen.classList.add(direction === "previous" ? "screen-in-previous" : "screen-in-next");
+          caption.textContent = selected.dataset.caption;
+          count.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(controls.length).padStart(2, "0")}`;
+          controls.forEach((control, controlIndex) => {
+            const isActive = controlIndex === currentIndex;
+            control.classList.toggle("is-active", isActive);
+            control.setAttribute("aria-pressed", String(isActive));
+          });
+        };
+
+        controls.forEach((control, index) => control.addEventListener("click", () => showScreen(index, index < currentIndex ? "previous" : "next")));
+        previous.addEventListener("click", () => showScreen(currentIndex - 1, "previous"));
+        next.addEventListener("click", () => showScreen(currentIndex + 1, "next"));
+        device.addEventListener("pointerdown", (event) => { pointerStartX = event.clientX; });
+        device.addEventListener("pointerup", (event) => {
+          if (pointerStartX === null) return;
+          const distance = event.clientX - pointerStartX;
+          if (Math.abs(distance) > 36) {
+            showScreen(currentIndex + (distance < 0 ? 1 : -1), distance < 0 ? "next" : "previous");
+          }
+          pointerStartX = null;
+        });
+        device.addEventListener("pointercancel", () => { pointerStartX = null; });
+      })();
+    </script>
+  </body>
+</html>
