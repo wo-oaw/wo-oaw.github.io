@@ -278,23 +278,28 @@ button { color: inherit; font: inherit; }
 
 .tech-badges {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
   gap: 10px;
 }
 
-.tech-badges li {
+.tech-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-badge-row li {
   display: inline-flex;
   min-height: 40px;
   align-items: center;
-  gap: 9px;
-  padding: 8px 14px;
+  gap: 8px;
+  padding: 8px 12px;
   border: 1px solid var(--ink);
   border-radius: 999px;
   font: 500 12px/1.2 var(--mono);
   white-space: nowrap;
 }
 
-.tech-badges img { width: 18px; height: 18px; object-fit: contain; }
+.tech-badge-row img { width: 18px; height: 18px; object-fit: contain; }
 
 .inline-link {
   display: inline-block;
@@ -582,20 +587,12 @@ button { color: inherit; font: inherit; }
 
 :focus-visible { outline: 3px solid #3773e8; outline-offset: 4px; }
 
-@media (max-width: 1200px) {
-  .tech-badges { grid-template-columns: repeat(3, max-content); }
-}
-
 @media (max-width: 1050px) {
   .project-row { grid-template-columns: 36px minmax(270px, .9fr) minmax(320px, 1.1fr); gap: 28px; }
   .principles, .experience, .skills { column-gap: 54px; }
   .principle-list li { grid-template-columns: 38px 1fr; }
   .principle-list p { grid-column: 2; }
   .timeline li { grid-template-columns: 128px 1fr; gap: 16px; }
-}
-
-@media (max-width: 900px) {
-  .tech-badges { grid-template-columns: repeat(2, max-content); }
 }
 
 @media (max-width: 820px) {
@@ -673,8 +670,8 @@ button { color: inherit; font: inherit; }
 }
 
 @media (max-width: 480px) {
-  .tech-badges { gap: 8px; }
-  .tech-badges li { gap: 7px; padding: 8px 10px; font-size: 11px; }
+  .tech-badges, .tech-badge-row { gap: 8px; }
+  .tech-badge-row li { gap: 7px; padding: 8px 10px; font-size: 11px; }
   .brand, .menu-button { font-size: 11px; }
   .intro h1 { font-size: clamp(36px, 10.6vw, 48px); }
   .statement-copy h2,
