@@ -355,12 +355,6 @@ button { color: inherit; font: inherit; }
 
 .projects-heading .section-index { margin: 0; }
 
-.projects-heading h2 {
-  font-size: clamp(32px, 4vw, 58px);
-  font-weight: 500;
-  letter-spacing: -.045em;
-}
-
 .project-row {
   position: relative;
   display: grid;
@@ -645,7 +639,6 @@ button { color: inherit; font: inherit; }
   .about-stack { margin-top: 28px; }
   .portrait { justify-self: start; width: min(100%, 440px); }
   .projects-heading { display: block; }
-  .projects-heading h2 { margin-top: 14px; }
 
   .project-row {
     grid-template-columns: 34px 1fr;
